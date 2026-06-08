@@ -9,6 +9,37 @@
 <meta property="og:title" content="Matis Dembele — Développeur web full-stack">
 <meta property="og:description" content="Junior full-stack JS/PHP. BTS SIO SLAM. Recherche un premier poste de développeur — disponible immédiatement.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://matisdembele.com">
+<meta property="og:image" content="https://matisdembele.com/og-image.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Matis Dembele — Développeur web full-stack">
+<meta name="twitter:description" content="Junior full-stack JS/PHP. BTS SIO SLAM. Disponible immédiatement.">
+<meta name="twitter:image" content="https://matisdembele.com/og-image.png">
+<link rel="canonical" href="https://matisdembele.com">
+<meta name="theme-color" content="#F4F1EB">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23F4F1EB'/><text x='50' y='70' font-size='58' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%23C8412B'>M</text></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matis Dembele",
+  "jobTitle": "Développeur web full-stack junior",
+  "url": "https://matisdembele.com",
+  "email": "matis@matisdembele.com",
+  "telephone": "+33612765818",
+  "address": { "@type": "PostalAddress", "addressLocality": "Toulon", "postalCode": "83000", "addressCountry": "FR" },
+  "alumniOf": "BTS SIO option SLAM — Lycée Bonaparte",
+  "knowsLanguage": ["fr", "en"],
+  "sameAs": [
+    "https://github.com/MatisDembele",
+    "https://www.linkedin.com/in/matis-dembele"
+  ],
+  "knowsAbout": ["PHP", "Symfony", "React", "Node.js", "Express.js", "Angular", "TypeScript", "JavaScript", "SQL", "PostgreSQL", "MySQL", "Docker", "Git"]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -698,7 +729,7 @@ footer {
   <section id="projects" class="section shell">
     <div class="section-head">
       <span class="num reveal">— 02 / Sélection</span>
-      <h2 class="reveal delay-1">Quatre projets,<br>deux contextes : <em>la défense</em><br>et <em>l'école.</em></h2>
+      <h2 class="reveal delay-1">Cinq projets,<br>trois contextes : <em>la défense</em>,<br><em>l'école</em> et <em>le perso.</em></h2>
     </div>
 
     <div class="projects">
@@ -812,6 +843,36 @@ footer {
           </ul>
         </div>
       </article>
+
+      <article class="project reveal">
+        <div class="num-col">
+          <span class="n">05</span>
+          <span class="year">2026</span>
+          <span>Projet perso · Solo</span>
+        </div>
+        <div class="title-col">
+          <div class="role">Projet personnel · En production</div>
+          <h3><em>Fight Data Arena —</em><br>frame data SF6 gamifié</h3>
+          <div class="stack">
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>FastAPI</span>
+            <span>Python</span>
+            <span>PostgreSQL</span>
+            <span>SQLAlchemy</span>
+            <span>BeautifulSoup</span>
+          </div>
+        </div>
+        <div class="desc-col">
+          <p>Application web full-stack qui transforme les <strong>frame data de Street Fighter 6</strong> — habituellement consultés sous forme de tableaux bruts — en quiz interactifs pour les mémoriser. Déployée en production sur <a href="https://www.fightdata.app/" target="_blank" rel="noopener" style="color: var(--accent); border-bottom: 1px solid currentColor;">fightdata.app</a>.</p>
+          <ul>
+            <li>API REST FastAPI + base PostgreSQL (1 418 entrées), modèles Fighter / Move via SQLAlchemy</li>
+            <li>Scraper Python autonome (BeautifulSoup) pour alimenter la base depuis ultimateframedata.com</li>
+            <li><em>Punish Calculator</em> : logique métier qui détermine si un coup est punissable selon son frame advantage sur blocage</li>
+            <li>Déploiement automatique : front Next.js sur Vercel, back FastAPI sur Render, redéploiement à chaque push</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -890,6 +951,10 @@ footer {
         <a href="https://www.linkedin.com/in/matis-dembele" target="_blank" rel="noopener" class="reveal delay-3">
           <span class="label">LinkedIn</span>
           <span class="value">/in/matis-dembele</span>
+        </a>
+        <a href="/Matis_DEMBELE_CV.pdf" target="_blank" rel="noopener" class="reveal delay-3" download>
+          <span class="label">CV</span>
+          <span class="value">Télécharger (PDF)</span>
         </a>
       </div>
     </div>
