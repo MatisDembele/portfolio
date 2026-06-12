@@ -1,1002 +1,360 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matis Dembele — Développeur web full-stack</title>
-<meta name="description" content="Développeur web junior full-stack basé à Toulon. PHP/Symfony, React, Node.js, Angular. Diplômé BTS SIO SLAM, deux stages à la DIRISI — Ministère des Armées. Recherche un premier poste de développeur — disponible immédiatement.">
-<meta name="author" content="Matis Dembele">
-<meta property="og:title" content="Matis Dembele — Développeur web full-stack">
-<meta property="og:description" content="Junior full-stack JS/PHP. BTS SIO SLAM. Recherche un premier poste de développeur — disponible immédiatement.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://matisdembele.com">
-<meta property="og:image" content="https://matisdembele.com/og-image.png">
-<meta property="og:locale" content="fr_FR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Matis Dembele — Développeur web full-stack">
-<meta name="twitter:description" content="Junior full-stack JS/PHP. BTS SIO SLAM. Disponible immédiatement.">
-<meta name="twitter:image" content="https://matisdembele.com/og-image.png">
-<link rel="canonical" href="https://matisdembele.com">
-<meta name="theme-color" content="#F4F1EB">
-
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23F4F1EB'/><text x='50' y='70' font-size='58' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%23C8412B'>M</text></svg>">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Matis Dembele",
-  "jobTitle": "Développeur web full-stack junior",
-  "url": "https://matisdembele.com",
-  "email": "matis@matisdembele.com",
-  "telephone": "+33612765818",
-  "address": { "@type": "PostalAddress", "addressLocality": "Toulon", "postalCode": "83000", "addressCountry": "FR" },
-  "alumniOf": "BTS SIO option SLAM — Lycée Bonaparte",
-  "knowsLanguage": ["fr", "en"],
-  "sameAs": [
-    "https://github.com/MatisDembele",
-    "https://www.linkedin.com/in/matis-dembele"
-  ],
-  "knowsAbout": ["PHP", "Symfony", "React", "Node.js", "Express.js", "Angular", "TypeScript", "JavaScript", "SQL", "PostgreSQL", "MySQL", "Docker", "Git"]
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400,0;0,9..144,500,0;0,9..144,600,0;1,9..144,400,100;1,9..144,500,100&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #F4F1EB;
-  --bg-soft: #ECE8DE;
-  --ink: #1A1A1A;
-  --ink-soft: #4A4A47;
-  --muted: #8B8680;
-  --accent: #C8412B;
-  --accent-soft: rgba(200, 65, 43, 0.08);
-  --line: rgba(26, 26, 26, 0.12);
-  --line-strong: rgba(26, 26, 26, 0.25);
-
-  --serif: 'Fraunces', Georgia, serif;
-  --sans: 'Manrope', system-ui, sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, monospace;
-
-  --max-width: 1400px;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-}
-
-/* Subtle paper grain — gives the page texture */
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1000;
-  opacity: 0.45;
-  mix-blend-mode: multiply;
-}
-
-a { color: inherit; text-decoration: none; }
-
-::selection { background: var(--accent); color: var(--bg); }
-
-.shell {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-@media (max-width: 720px) {
-  .shell { padding: 0 22px; }
-}
-
-/* ─────────── NAV ─────────── */
-nav.top {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  background: rgba(244, 241, 235, 0.82);
-  border-bottom: 1px solid var(--line);
-}
-
-nav.top .row {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 18px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: var(--mono);
-  font-size: 12px;
-}
-
-nav.top .brand {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  font-variation-settings: "opsz" 14, "SOFT" 100;
-}
-
-nav.top ul {
-  list-style: none;
-  display: flex;
-  gap: 32px;
-}
-
-nav.top a {
-  position: relative;
-  padding: 4px 0;
-  transition: color 0.25s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-nav.top a:hover { color: var(--accent); }
-
-nav.top .status {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-nav.top .dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(200, 65, 43, 0.18);
-  animation: pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(0.9); }
-}
-
-@media (max-width: 880px) {
-  nav.top ul { display: none; }
-  nav.top .row { padding: 14px 22px; }
-}
-
-/* ─────────── HERO ─────────── */
-.hero {
-  padding: 180px 0 100px;
-  position: relative;
-}
-
-.hero .meta {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  margin-bottom: 56px;
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.hero .meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hero .meta span + span::before {
-  content: '';
-  width: 4px; height: 4px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-
-.hero h1 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(46px, 9vw, 132px);
-  line-height: 0.96;
-  letter-spacing: -0.028em;
-  max-width: 1180px;
-  font-variation-settings: "opsz" 144;
-}
-
-.hero h1 em {
-  font-style: italic;
-  font-weight: 400;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
-}
-
-.hero h1 .accent { color: var(--accent); font-style: italic; }
-
-.hero .lede {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 80px;
-  align-items: end;
-  margin-top: 96px;
-  padding-top: 36px;
-  border-top: 1px solid var(--line);
-}
-
-.hero .lede .left {
-  font-family: var(--mono);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  line-height: 2;
-}
-
-.hero .lede .left strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.hero .lede .left .sep {
-  display: block;
-  width: 32px; height: 1px;
-  background: var(--line-strong);
-  margin: 14px 0;
-}
-
-.hero .lede p {
-  font-family: var(--sans);
-  font-size: 22px;
-  line-height: 1.5;
-  color: var(--ink-soft);
-  font-weight: 400;
-  max-width: 720px;
-}
-
-.hero .lede p strong { color: var(--ink); font-weight: 600; }
-.hero .lede p em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--ink); font-variation-settings: "opsz" 14, "SOFT" 100; }
-
-@media (max-width: 880px) {
-  .hero { padding: 130px 0 72px; }
-  .hero .lede { grid-template-columns: 1fr; gap: 32px; align-items: start; }
-  .hero .lede p { font-size: 18px; }
-}
-
-/* ─────────── SECTION ─────────── */
-.section {
-  padding: 120px 0;
-  border-top: 1px solid var(--line);
-  position: relative;
-}
-
-.section-head {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 60px;
-  margin-bottom: 80px;
-  align-items: baseline;
-}
-
-.section-head .num {
-  font-family: var(--mono);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  position: sticky;
-  top: 100px;
-}
-
-.section-head h2 {
-  font-family: var(--serif);
-  font-size: clamp(36px, 5.4vw, 68px);
-  font-weight: 400;
-  line-height: 1.02;
-  letter-spacing: -0.025em;
-  font-variation-settings: "opsz" 144;
-}
-
-.section-head h2 em {
-  font-style: italic;
-  color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 100;
-}
-
-@media (max-width: 880px) {
-  .section { padding: 80px 0; }
-  .section-head { grid-template-columns: 1fr; gap: 14px; margin-bottom: 48px; }
-  .section-head .num { position: static; }
-}
-
-/* ─────────── ABOUT ─────────── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 60px;
-}
-
-.about-grid .side {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.about-grid .side dt {
-  color: var(--ink);
-  font-weight: 500;
-  margin-top: 18px;
-  padding-top: 10px;
-  border-top: 1px solid var(--line);
-}
-
-.about-grid .side dt:first-child { margin-top: 0; padding-top: 0; border-top: none; }
-
-.about-grid .side dd { margin-top: 4px; }
-
-.about-grid .body p {
-  font-family: var(--serif);
-  font-size: 24px;
-  line-height: 1.45;
-  font-weight: 400;
-  margin-bottom: 24px;
-  font-variation-settings: "opsz" 14;
-  color: var(--ink);
-}
-
-.about-grid .body p em { font-style: italic; color: var(--accent); font-variation-settings: "opsz" 14, "SOFT" 100; }
-.about-grid .body p strong { font-weight: 600; }
-
-@media (max-width: 880px) {
-  .about-grid { grid-template-columns: 1fr; gap: 36px; }
-  .about-grid .body p { font-size: 19px; }
-}
-
-/* ─────────── PROJECTS ─────────── */
-.projects { display: flex; flex-direction: column; }
-
-.project {
-  display: grid;
-  grid-template-columns: 220px 1fr 1fr;
-  gap: 60px;
-  padding: 56px 0;
-  border-top: 1px solid var(--line);
-  align-items: start;
-  position: relative;
-  transition: background 0.5s ease;
-}
-
-.project:last-child { border-bottom: 1px solid var(--line); }
-
-.project::before {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: 1px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.project:hover::before { transform: scaleX(1); }
-
-.project:hover { background: var(--accent-soft); }
-
-.project .num-col {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.project .num-col .n {
-  font-family: var(--serif);
-  font-size: 64px;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 0.9;
-  margin-bottom: 14px;
-  font-weight: 400;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
-  transition: color 0.4s ease, transform 0.4s ease;
-}
-
-.project:hover .num-col .n { color: var(--accent); transform: translateX(6px); }
-
-.project .num-col .year { color: var(--ink); font-weight: 500; }
-
-.project .title-col h3 {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3.4vw, 42px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 14px;
-  font-variation-settings: "opsz" 144;
-}
-
-.project .title-col h3 em {
-  font-style: italic;
-  color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 100;
-}
-
-.project .title-col .role {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-.project .title-col .stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 22px;
-}
-
-.project .title-col .stack span {
-  font-family: var(--mono);
-  font-size: 11px;
-  padding: 4px 11px;
-  border: 1px solid var(--line-strong);
-  border-radius: 100px;
-  color: var(--ink-soft);
-  transition: border-color 0.3s, color 0.3s;
-}
-
-.project:hover .title-col .stack span { border-color: var(--accent); color: var(--accent); }
-
-.project .desc-col p {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--ink-soft);
-  margin-bottom: 14px;
-}
-
-.project .desc-col p strong { color: var(--ink); font-weight: 600; }
-
-.project .desc-col ul { list-style: none; margin-top: 8px; }
-
-.project .desc-col li {
-  font-family: var(--sans);
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--ink-soft);
-  padding-left: 22px;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.project .desc-col li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-family: var(--mono);
-  font-weight: 500;
-}
-
-@media (max-width: 1100px) {
-  .project { grid-template-columns: 130px 1fr; gap: 36px; }
-  .project .desc-col { grid-column: 2 / -1; }
-}
-
-@media (max-width: 720px) {
-  .project { grid-template-columns: 1fr; gap: 22px; padding: 44px 0; }
-  .project .desc-col { grid-column: 1; }
-  .project .num-col { flex-direction: row; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-  .project .num-col .n { font-size: 40px; margin-bottom: 0; }
-}
-
-/* ─────────── STACK ─────────── */
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 48px;
-}
-
-.stack-cat h4 {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  margin-bottom: 22px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
-  font-weight: 500;
-}
-
-.stack-cat ul { list-style: none; }
-
-.stack-cat li {
-  font-family: var(--serif);
-  font-size: 22px;
-  line-height: 1.45;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  margin-bottom: 4px;
-  font-variation-settings: "opsz" 14;
-}
-
-.stack-cat li.italic {
-  font-style: italic;
-  color: var(--ink-soft);
-  font-variation-settings: "opsz" 14, "SOFT" 100;
-}
-
-@media (max-width: 1000px) { .stack-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; } }
-@media (max-width: 480px) { .stack-grid { grid-template-columns: 1fr; gap: 28px; } }
-
-/* ─────────── CONTACT ─────────── */
-.contact-block { padding: 24px 0 0; }
-
-.contact-block .links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--line);
-}
-
-.contact-block .links a {
-  padding: 30px 0;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: padding-left 0.4s ease, color 0.3s ease;
-  position: relative;
-}
-
-.contact-block .links a:nth-child(odd) { padding-right: 36px; }
-.contact-block .links a:nth-child(even) {
-  padding-left: 36px;
-  border-left: 1px solid var(--line);
-}
-
-.contact-block .links a::after {
-  content: '↗';
-  position: absolute;
-  right: 0;
-  font-family: var(--mono);
-  color: var(--muted);
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity 0.3s, transform 0.3s, color 0.3s;
-}
-
-.contact-block .links a:nth-child(odd)::after { right: 0; }
-.contact-block .links a:nth-child(even)::after { right: 0; }
-
-.contact-block .links a:hover { color: var(--accent); }
-.contact-block .links a:hover::after { opacity: 1; transform: translateX(0); color: var(--accent); }
-
-.contact-block .links .label {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-}
-
-.contact-block .links .value {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-style: italic;
-  font-weight: 400;
-  font-variation-settings: "opsz" 14, "SOFT" 100;
-}
-
-@media (max-width: 720px) {
-  .contact-block .links { grid-template-columns: 1fr; }
-  .contact-block .links a:nth-child(odd) { padding-right: 0; }
-  .contact-block .links a:nth-child(even) { padding-left: 0; border-left: none; }
-  .contact-block .links .value { font-size: 17px; }
-}
-
-/* ─────────── FOOTER ─────────── */
-footer {
-  padding: 60px 0 40px;
-  border-top: 1px solid var(--line);
-  margin-top: 80px;
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-/* ─────────── REVEAL ─────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.95s cubic-bezier(0.2, 0.8, 0.2, 1),
-              transform 0.95s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.reveal.in { opacity: 1; transform: translateY(0); }
-
-.reveal.delay-1 { transition-delay: 0.08s; }
-.reveal.delay-2 { transition-delay: 0.16s; }
-.reveal.delay-3 { transition-delay: 0.24s; }
-.reveal.delay-4 { transition-delay: 0.32s; }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matis Dembele — Développeur web full-stack · Toulon</title>
+  <meta name="description" content="Développeur web full-stack junior, BTS SIO SLAM. Deux stages à la DIRISI (Ministère des Armées), une application en production. Recherche un premier poste sur Toulon, Aix-en-Provence ou Marseille. Disponible immédiatement." />
+  <meta name="theme-color" content="#14191c" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='14' fill='%2314191c'/%3E%3Ctext x='50' y='68' font-size='46' font-family='monospace' text-anchor='middle' fill='%232e9e66'%3EMD%3C/text%3E%3C/svg%3E" />
+  <meta property="og:title" content="Matis Dembele — Développeur web full-stack" />
+  <meta property="og:description" content="Formé à l'exigence Défense. Déjà en production. Disponible immédiatement sur Toulon, Aix, Marseille." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-<nav class="top">
-  <div class="row">
-    <a href="#" class="brand">M.D</a>
-    <ul>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#projects">Projets</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="status">
-      <span class="dot"></span>
-      <span>Dispo. immédiate</span>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ============ Intro guidée ============ -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-line" hidden>
+    <div class="intro__card">
+      <p class="intro__ref mono">DOSSIER — MD/2026</p>
+      <p class="intro__line" id="intro-line" aria-live="polite"><span id="intro-typed"></span><span class="intro__caret" aria-hidden="true"></span></p>
+      <div class="intro__actions">
+        <button class="btn btn--adv" id="intro-enter" type="button">Consulter le dossier</button>
+        <button class="btn btn--ghost-dark" id="intro-skip" type="button">Passer</button>
+      </div>
     </div>
   </div>
-</nav>
 
-<main>
-  <!-- ─── HERO ─── -->
-  <section class="hero shell">
-    <div class="meta reveal">
-      <span>№ 2026 / Édition 01</span>
-      <span>Toulon, FR</span>
-      <span>Développeur web junior</span>
-      <span>Recherche emploi</span>
-    </div>
-    <h1 class="reveal delay-1">
-      Je conçois et développe<br>
-      des applications web<br>
-      <span class="accent">full-stack —</span> du back<br>
-      <em>au pixel près.</em>
-    </h1>
-    <div class="lede">
-      <div class="left reveal delay-2">
-        <strong>Matis Dembele</strong><br>
-        BTS SIO SLAM, 2024<br>
-        <span class="sep"></span>
-        PHP / Symfony<br>
-        React / Node.js<br>
-        Angular / TypeScript
-      </div>
-      <p class="reveal delay-3">
-        Diplômé d'un <strong>BTS SIO option SLAM</strong>, j'ai effectué deux stages de développement au sein de la <strong>DIRISI</strong> — direction informatique du Ministère des Armées. Je recherche un <em>premier poste de développeur web full-stack</em> sur Toulon, Aix-en-Provence ou Marseille — disponible immédiatement.
-      </p>
-    </div>
-  </section>
+  <!-- ============ Header ============ -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__progress" id="scroll-progress" aria-hidden="true"></div>
+    <div class="site-header__inner">
+      <a class="brand" href="#accueil" aria-label="Matis Dembele — accueil">
+        <span class="brand__mark mono" aria-hidden="true">MD</span>
+        <span class="brand__text">
+          <span class="brand__name">Matis Dembele</span>
+          <span class="brand__role mono">Développeur full-stack</span>
+        </span>
+      </a>
 
-  <!-- ─── ABOUT ─── -->
-  <section id="about" class="section shell">
-    <div class="section-head">
-      <span class="num reveal">— 01 / À propos</span>
-      <h2 class="reveal delay-1">Rigueur en contexte<br>exigeant, <em>sensibilité produit.</em></h2>
-    </div>
-    <div class="about-grid">
-      <dl class="side reveal">
-        <dt>Localisation</dt><dd>Toulon, 83000</dd>
-        <dt>Statut</dt><dd>En recherche</dd>
-        <dt>Formation</dt><dd>BTS SIO SLAM</dd>
-        <dt>Langues</dt><dd>FR (natif), EN (B2)</dd>
-        <dt>Méthode</dt><dd>Agile / Scrum</dd>
-        <dt>Mobilité</dt><dd>13 / 83 / 84</dd>
-      </dl>
-      <div class="body reveal delay-1">
-        <p>Mes deux stages au sein du Ministère des Armées m'ont appris à tenir une exigence technique élevée — environnements conteneurisés, authentification stricte, code revu, méthode agile — tout en livrant du code <em>utile, lisible, et qui passe en production.</em></p>
-        <p>J'aime construire des choses propres : comprendre la donnée avant d'écrire la requête, des composants front bien découpés, du code <em>qu'on relit sans grincer.</em> Je travaille de la base à l'interface, à l'aise aussi bien dans l'<strong>écosystème JavaScript</strong> que sur <strong>PHP/Symfony</strong>.</p>
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="site-nav__list">
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#production">Production</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#formation">Formation</a></li>
+          <li><a href="#documents">Documents</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__tools">
+        <span class="header-status mono"><span class="header-status__dot" aria-hidden="true"></span>Dispo. immédiate</span>
+        <button class="nav-burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- ─── PROJECTS ─── -->
-  <section id="projects" class="section shell">
-    <div class="section-head">
-      <span class="num reveal">— 02 / Sélection</span>
-      <h2 class="reveal delay-1">Cinq projets,<br>trois contextes : <em>la défense</em>,<br><em>l'école</em> et <em>le perso.</em></h2>
-    </div>
+  <main id="main">
 
-    <div class="projects">
-      <article class="project reveal">
-        <div class="num-col">
-          <span class="n">01</span>
-          <span class="year">2024</span>
-          <span>Stage / 6 sem.</span>
-        </div>
-        <div class="title-col">
-          <div class="role">Stage · DIRISI Toulon</div>
-          <h3><em>e-DOCAERO —</em><br>réécriture full-stack</h3>
-          <div class="stack">
-            <span>React</span>
-            <span>Node.js</span>
-            <span>Express</span>
-            <span>PostgreSQL</span>
-            <span>Sequelize</span>
-            <span>Docker</span>
-            <span>Keycloak</span>
+    <!-- ============ Hero — cartouche ============ -->
+    <section class="hero" id="accueil">
+      <div class="container">
+        <div class="cartouche reveal">
+          <div class="cartouche__head">
+            <div class="cartouche__copy">
+            <p class="cartouche__ref mono">RÉF. MD-2026 · ÉD. 02 · TOULON, FR</p>
+            <h1 class="cartouche__title">
+              <span>Développeur web full-stack.</span>
+              <span>Formé à l'exigence Défense.</span>
+              <span class="cartouche__title-adv">Déjà en production.</span>
+            </h1>
+            <p class="cartouche__sub">Diplômé d'un BTS SIO option SLAM, deux stages de développement à la <strong>DIRISI</strong> — direction informatique du Ministère des Armées — et une application full-stack <strong>en production</strong>. Je recherche un premier poste de développeur web sur Toulon, Aix-en-Provence ou Marseille.</p>
+            <div class="cartouche__actions">
+              <a class="btn btn--adv" href="#parcours">Consulter le parcours</a>
+              <a class="btn btn--ghost" href="assets/docs/Matis_DEMBELE_CV.pdf" target="_blank" rel="noreferrer">CV (PDF)</a>
+            </div>
+            </div>
+            <figure class="cartouche__photo">
+              <img src="assets/img/portrait.jpg" alt="Portrait de Matis Dembele" width="600" height="750" loading="eager" fetchpriority="high" />
+              <figcaption class="mono">M. Dembele — Toulon</figcaption>
+            </figure>
           </div>
+          <dl class="cartouche__fields">
+            <div class="cartouche__field cartouche__field--adv">
+              <dt class="mono">Statut</dt>
+              <dd>En recherche — disponible immédiatement</dd>
+            </div>
+            <div class="cartouche__field">
+              <dt class="mono">Zone</dt>
+              <dd>Toulon · Aix · Marseille (83 / 13 / 84)</dd>
+            </div>
+            <div class="cartouche__field">
+              <dt class="mono">Diplôme</dt>
+              <dd>BTS SIO SLAM — 2024</dd>
+            </div>
+            <div class="cartouche__field">
+              <dt class="mono">Production</dt>
+              <dd><a href="https://www.fightdata.app/" target="_blank" rel="noreferrer">fightdata.app</a> — en ligne</dd>
+            </div>
+          </dl>
         </div>
-        <div class="desc-col">
-          <p>Réécriture en application web full-stack d'un outil de gestion de <strong>documentation aéronautique militaire</strong> (DIRCAM/DIA), au sein d'une équipe en méthode agile.</p>
-          <ul>
-            <li>Front-end React.js : affichage conditionnel par rôle utilisateur, tri et filtrage de commandes, export Excel</li>
-            <li>Back-end Node.js / Express : endpoints API REST, requêtes Sequelize avec jointures sur PostgreSQL</li>
-            <li>Environnement conteneurisé Docker, authentification Keycloak, gestion par tickets et sprints</li>
-          </ul>
-        </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="project reveal">
-        <div class="num-col">
-          <span class="n">02</span>
-          <span class="year">2024</span>
-          <span>BTS / Équipe</span>
-        </div>
-        <div class="title-col">
-          <div class="role">Projet BTS · Lycée Bonaparte</div>
-          <h3><em>Maison des Ligues —</em><br>FFE 2024</h3>
-          <div class="stack">
-            <span>PHP</span>
-            <span>Symfony</span>
-            <span>MySQL</span>
-            <span>API Oracle</span>
-            <span>phpUnit</span>
+    <!-- ============ FICHE 01 — Parcours ============ -->
+    <section class="section" id="parcours">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="fiche mono">Fiche 01 — Parcours</p>
+          <h2 class="section__title">Deux stages au Ministère des Armées</h2>
+          <p class="section__lede">La DIRISI, c'est un environnement contraint : SSI stricte, conteneurs, authentification Keycloak, code revu, tickets et sprints. C'est là que j'ai appris à livrer du code utile, lisible, et qui passe en production.</p>
+        </header>
+
+        <ol class="ledger">
+          <li class="ledger__entry ledger__entry--top reveal">
+            <div class="ledger__when mono">Janv. — Mars 2024 · 6 sem.</div>
+            <div class="ledger__body">
+              <p class="ledger__org mono">DIRISI Toulon · Ministère des Armées</p>
+              <h3 class="ledger__role">Développeur full-stack — stage · e-DOCAERO</h3>
+              <p class="ledger__desc">Réécriture full-stack (stack PERN) d'un outil de gestion de documentation aéronautique militaire pour la DIRCAM/DIA, en remplacement d'un outil Access 97 obsolète. Travail au ticket, en sprints, dans une équipe agile.</p>
+              <ul class="ledger__points">
+                <li>Front React : affichage par rôle utilisateur, tri et filtrage des commandes, i18n FR/EN, exports Excel</li>
+                <li>Back Express / Sequelize : endpoints REST, jointures PostgreSQL, seeder de table depuis un fichier xlsx</li>
+                <li>Docker, Keycloak, débogage en environnement conteneurisé</li>
+              </ul>
+              <ul class="ledger__tags mono">
+                <li>React</li><li>Node.js</li><li>PostgreSQL</li><li>Docker</li><li>Keycloak</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="ledger__entry reveal">
+            <div class="ledger__when mono">Mai — Juin 2023 · 8 sem.</div>
+            <div class="ledger__body">
+              <p class="ledger__org mono">DIRISI Toulon · Ministère des Armées</p>
+              <h3 class="ledger__role">Développeur front — stage · PATRITEC</h3>
+              <p class="ledger__desc">Application web de gestion interne développée en équipe selon une méthode agile (daily scrum, sprints).</p>
+              <ul class="ledger__points">
+                <li>Features Angular : rôles et permissions, page d'administration avec création de comptes</li>
+                <li>Classe réutilisable d'export XLS, génération de PDF dynamiques (jsPDF) via observables RxJS</li>
+              </ul>
+              <ul class="ledger__tags mono">
+                <li>Angular</li><li>TypeScript</li><li>RxJS</li><li>Agile</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FICHE 02 — En production ============ -->
+    <section class="section section--ink" id="production">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="fiche fiche--adv mono">Fiche 02 — En production</p>
+          <h2 class="section__title">Fight Data Arena</h2>
+          <p class="section__lede">Un produit conçu, développé, déployé et maintenu seul — pas un projet d'école. En ligne sur <a class="link-adv" href="https://www.fightdata.app/" target="_blank" rel="noreferrer">fightdata.app</a>.</p>
+        </header>
+
+        <article class="prod-card reveal">
+          <div class="prod-card__main">
+            <p class="prod-card__kind mono">Projet personnel · Full-stack · CI/CD</p>
+            <h3 class="prod-card__title">La frame data de Street Fighter 6, transformée en quiz</h3>
+            <p class="prod-card__desc">Les frame data sont d'ordinaire des tableaux bruts difficiles à mémoriser. Fight Data Arena les transforme en quiz interactifs : une API FastAPI sert 1 418 entrées en base PostgreSQL, alimentées par un scraper Python autonome, et un front Next.js les met en jeu.</p>
+            <ul class="prod-card__points">
+              <li>Modèles Fighter / Move via SQLAlchemy, API REST FastAPI</li>
+              <li>Scraper BeautifulSoup alimentant la base depuis ultimateframedata.com</li>
+              <li><strong>Punish Calculator</strong> : logique métier qui détermine si un coup est punissable selon son frame advantage au blocage</li>
+              <li>Déploiement continu : front sur Vercel, back sur Render, redéploiement à chaque push</li>
+            </ul>
+            <div class="prod-card__actions">
+              <a class="btn btn--adv" href="https://www.fightdata.app/" target="_blank" rel="noreferrer">Ouvrir fightdata.app</a>
+              <a class="btn btn--ghost-light" href="https://github.com/MatisDembele" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
           </div>
-        </div>
-        <div class="desc-col">
-          <p>Application web d'inscription au congrès pour les licenciés de la <strong>Fédération Française d'Escrime</strong>, développée en équipe et mise en production sur serveur réel.</p>
-          <ul>
-            <li>Connexion à une API Oracle FFE, création de compte par numéro de licencié</li>
-            <li>Mail de confirmation automatique, gestion des ateliers et vacations côté salariés FFE</li>
-            <li>Tests unitaires phpUnit et déploiement en environnement de production</li>
-          </ul>
-        </div>
-      </article>
 
-      <article class="project reveal">
-        <div class="num-col">
-          <span class="n">03</span>
-          <span class="year">2023</span>
-          <span>Stage / 8 sem.</span>
-        </div>
-        <div class="title-col">
-          <div class="role">Stage · DIRISI Toulon</div>
-          <h3><em>PATRITEC —</em><br>gestion interne</h3>
-          <div class="stack">
-            <span>Angular</span>
-            <span>TypeScript</span>
-            <span>jsPDF</span>
-            <span>RxJS</span>
-            <span>Agile</span>
-          </div>
-        </div>
-        <div class="desc-col">
-          <p>Application web de gestion interne, développée en équipe au sein de la DIRISI selon une méthode <strong>Agile</strong> (daily scrum, sprints).</p>
-          <ul>
-            <li>Features Angular : gestion des rôles et permissions, page d'administration avec création de comptes</li>
-            <li>Conception d'une classe réutilisable d'export XLS</li>
-            <li>Génération de PDF dynamiques (jsPDF) depuis des données via observables RxJS</li>
-          </ul>
-        </div>
-      </article>
+          <figure class="prod-card__figure" aria-hidden="true">
+            <div class="framedata">
+              <p class="framedata__label mono">EX. — COUP MOYEN, AU BLOCAGE</p>
+              <div class="framedata__row">
+                <span class="framedata__seg mono">Startup · 8f</span>
+                <div class="framedata__cells">
+                  <i class="is-startup"></i><i class="is-startup"></i><i class="is-startup"></i><i class="is-startup"></i><i class="is-startup"></i><i class="is-startup"></i><i class="is-startup"></i><i class="is-startup"></i>
+                </div>
+              </div>
+              <div class="framedata__row">
+                <span class="framedata__seg mono">Active · 3f</span>
+                <div class="framedata__cells">
+                  <i class="is-active"></i><i class="is-active"></i><i class="is-active"></i>
+                </div>
+              </div>
+              <div class="framedata__row">
+                <span class="framedata__seg mono">Recovery · 14f</span>
+                <div class="framedata__cells">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <figcaption class="framedata__verdict mono">−6 au blocage → <span>punissable</span></figcaption>
+            </div>
+          </figure>
+        </article>
 
-      <article class="project reveal">
-        <div class="num-col">
-          <span class="n">04</span>
-          <span class="year">2024</span>
-          <span>BTS / Solo</span>
-        </div>
-        <div class="title-col">
-          <div class="role">Projet BTS · Lycée Bonaparte</div>
-          <h3><em>Galaxy Swiss Bourdin —</em><br>notes de frais</h3>
-          <div class="stack">
-            <span>PHP</span>
-            <span>MySQL</span>
-            <span>Bootstrap</span>
-            <span>fpdf</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
-        <div class="desc-col">
-          <p>Application web de gestion des frais de déplacement, restauration et hébergement pour les <strong>visiteurs médicaux</strong> d'un laboratoire pharmaceutique.</p>
-          <ul>
-            <li>Deux niveaux de rôles : visiteur médical et comptable, avec workflows distincts</li>
-            <li>Validation des fiches de frais, mise en paiement, gestion fine de l'indemnisation kilométrique</li>
-            <li>Génération PDF (fpdf) optimisée — un seul fichier produit par mois</li>
-            <li>Sécurisation des mots de passe stockés en base</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="num-col">
-          <span class="n">05</span>
-          <span class="year">2026</span>
-          <span>Projet perso · Solo</span>
-        </div>
-        <div class="title-col">
-          <div class="role">Projet personnel · En production</div>
-          <h3><em>Fight Data Arena —</em><br>frame data SF6 gamifié</h3>
-          <div class="stack">
-            <span>Next.js</span>
-            <span>TypeScript</span>
-            <span>FastAPI</span>
-            <span>Python</span>
-            <span>PostgreSQL</span>
-            <span>SQLAlchemy</span>
-            <span>BeautifulSoup</span>
-          </div>
-        </div>
-        <div class="desc-col">
-          <p>Application web full-stack qui transforme les <strong>frame data de Street Fighter 6</strong> — habituellement consultés sous forme de tableaux bruts — en quiz interactifs pour les mémoriser. Déployée en production sur <a href="https://www.fightdata.app/" target="_blank" rel="noopener" style="color: var(--accent); border-bottom: 1px solid currentColor;">fightdata.app</a>.</p>
-          <ul>
-            <li>API REST FastAPI + base PostgreSQL (1 418 entrées), modèles Fighter / Move via SQLAlchemy</li>
-            <li>Scraper Python autonome (BeautifulSoup) pour alimenter la base depuis ultimateframedata.com</li>
-            <li><em>Punish Calculator</em> : logique métier qui détermine si un coup est punissable selon son frame advantage sur blocage</li>
-            <li>Déploiement automatique : front Next.js sur Vercel, back FastAPI sur Render, redéploiement à chaque push</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ─── STACK ─── -->
-  <section id="stack" class="section shell">
-    <div class="section-head">
-      <span class="num reveal">— 03 / Outillage</span>
-      <h2 class="reveal delay-1">Stack <em>full-stack JS</em>,<br>fondations <em>PHP</em> solides.</h2>
-    </div>
-    <div class="stack-grid">
-      <div class="stack-cat reveal">
-        <h4>Front-end</h4>
-        <ul>
-          <li>React</li>
-          <li>Angular</li>
-          <li>TypeScript</li>
-          <li>JavaScript</li>
-          <li>HTML / CSS</li>
-          <li class="italic">Bootstrap</li>
+        <ul class="prod-stats reveal" aria-label="Chiffres clés">
+          <li><span class="prod-stats__num">1 418</span><span class="prod-stats__label mono">entrées en base</span></li>
+          <li><span class="prod-stats__num">2</span><span class="prod-stats__label mono">services déployés (front + API)</span></li>
+          <li><span class="prod-stats__num">100 %</span><span class="prod-stats__label mono">déploiement automatique au push</span></li>
         </ul>
       </div>
-      <div class="stack-cat reveal delay-1">
-        <h4>Back-end</h4>
-        <ul>
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>PHP</li>
-          <li>Symfony</li>
-          <li>Sequelize</li>
-          <li class="italic">REST APIs</li>
-        </ul>
-      </div>
-      <div class="stack-cat reveal delay-2">
-        <h4>Données</h4>
-        <ul>
-          <li>PostgreSQL</li>
-          <li>MySQL</li>
-          <li>Oracle</li>
-          <li class="italic">Modélisation MCD</li>
-          <li class="italic">SQL avancé</li>
-        </ul>
-      </div>
-      <div class="stack-cat reveal delay-3">
-        <h4>Outils &amp; Pratiques</h4>
-        <ul>
-          <li>Git / GitHub</li>
-          <li>Docker</li>
-          <li>Keycloak</li>
-          <li>phpUnit</li>
-          <li class="italic">Agile / Scrum</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ─── CONTACT ─── -->
-  <section id="contact" class="section shell">
-    <div class="section-head">
-      <span class="num reveal">— 04 / Prise de contact</span>
-      <h2 class="reveal delay-1">Pour un poste,<br>un café, ou un <em>test technique.</em></h2>
-    </div>
-    <div class="contact-block">
-      <div class="links">
-        <a href="mailto:matis@matisdembele.com" class="reveal">
-          <span class="label">Email</span>
-          <span class="value">matis@matisdembele.com</span>
-        </a>
-        <a href="tel:+33612765818" class="reveal delay-1">
-          <span class="label">Téléphone</span>
-          <span class="value">06 12 76 58 18</span>
-        </a>
-        <a href="https://github.com/MatisDembele" target="_blank" rel="noopener" class="reveal delay-2">
-          <span class="label">GitHub</span>
-          <span class="value">/MatisDembele</span>
-        </a>
-        <a href="https://www.linkedin.com/in/matis-dembele" target="_blank" rel="noopener" class="reveal delay-3">
-          <span class="label">LinkedIn</span>
-          <span class="value">/in/matis-dembele</span>
-        </a>
-        <a href="/Matis_DEMBELE_CV.pdf" target="_blank" rel="noopener" class="reveal delay-3" download>
-          <span class="label">CV</span>
-          <span class="value">Télécharger (PDF)</span>
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- ============ FICHE 03 — Projets ============ -->
+    <section class="section section--alt" id="projets">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="fiche mono">Fiche 03 — Projets</p>
+          <h2 class="section__title">Cinq réalisations, trois contextes</h2>
+          <p class="section__lede">La défense, l'école et le perso. Chaque fiche projet indique la répartition réelle du travail entre front, back et données.</p>
+        </header>
 
-  <footer class="shell">
-    <span>© 2026 Matis Dembele</span>
-    <span>Conçu &amp; codé à Toulon</span>
-    <span>v1.0 — dembelematis.com</span>
+        <div class="filters reveal" id="project-filters" role="group" aria-label="Filtrer les projets"></div>
+        <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
+        <p class="projects-empty mono" id="projects-empty" hidden>Aucun projet dans cette catégorie pour le moment.</p>
+        <p class="projects-error mono" id="projects-error" hidden>Les projets n'ont pas pu être chargés. Si vous ouvrez ce fichier directement, servez le site avec un serveur local.</p>
+        <noscript>
+          <p class="projects-error mono">JavaScript est désactivé — retrouvez les projets sur <a href="https://github.com/MatisDembele" rel="noreferrer">GitHub</a>.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ============ FICHE 04 — Stack ============ -->
+    <section class="section" id="stack">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="fiche mono">Fiche 04 — Outillage</p>
+          <h2 class="section__title">Stack full-stack JS, fondations PHP solides</h2>
+        </header>
+
+        <div class="stack-grid">
+          <article class="stackblock reveal">
+            <h3 class="stackblock__title">Front-end</h3>
+            <ul class="stackblock__list mono">
+              <li>React</li><li>Next.js</li><li>Angular</li><li>TypeScript / JavaScript</li><li>HTML / CSS</li>
+            </ul>
+          </article>
+          <article class="stackblock reveal">
+            <h3 class="stackblock__title">Back-end</h3>
+            <ul class="stackblock__list mono">
+              <li>Node.js / Express</li><li>FastAPI / Python</li><li>PHP / Symfony</li><li>Sequelize / SQLAlchemy</li><li>APIs REST</li>
+            </ul>
+          </article>
+          <article class="stackblock reveal">
+            <h3 class="stackblock__title">Données</h3>
+            <ul class="stackblock__list mono">
+              <li>PostgreSQL</li><li>MySQL</li><li>Oracle</li><li>Modélisation MCD</li><li>SQL avancé</li>
+            </ul>
+          </article>
+          <article class="stackblock reveal">
+            <h3 class="stackblock__title">Outils &amp; pratiques</h3>
+            <ul class="stackblock__list mono">
+              <li>Git / GitHub</li><li>Docker</li><li>Keycloak</li><li>phpUnit</li><li>Agile / Scrum</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FICHE 05 — Formation ============ -->
+    <section class="section section--alt" id="formation">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="fiche mono">Fiche 05 — Formation</p>
+          <h2 class="section__title">Formation</h2>
+        </header>
+
+        <div class="edu reveal">
+          <div class="edu__main">
+            <p class="edu__org mono">Lycée Bonaparte · Toulon</p>
+            <h3 class="edu__degree">BTS SIO — option SLAM</h3>
+            <p class="edu__years mono">2022 — 2024</p>
+            <p class="edu__desc">Solutions Logicielles et Applications Métiers : conception et développement d'applications, maintenance corrective et évolutive, gestion des données. Deux réalisations professionnelles soutenues à l'épreuve E5 (fiches consultables dans les documents) et deux stages en entreprise à la DIRISI.</p>
+          </div>
+          <dl class="edu__side">
+            <div><dt class="mono">Langues</dt><dd>Français (natif) · Anglais (B2)</dd></div>
+            <div><dt class="mono">Méthode</dt><dd>Agile / Scrum</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FICHE 06 — Documents ============ -->
+    <section class="section section--ink" id="documents">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="fiche fiche--adv mono">Fiche 06 — Documents</p>
+          <h2 class="section__title">Pièces du dossier</h2>
+          <p class="section__lede">CV, fiches de réalisations professionnelles E5 et profils publics — tout est vérifiable.</p>
+        </header>
+
+        <div class="docs-grid">
+          <article class="docs-box docs-box--adv reveal">
+            <h3 class="docs-box__title mono">Candidature</h3>
+            <ul class="docs-box__list">
+              <li><a href="assets/docs/Matis_DEMBELE_CV.pdf" target="_blank" rel="noreferrer">CV — Matis Dembele (PDF)</a></li>
+              <li><a href="https://www.linkedin.com/in/matis-dembele" target="_blank" rel="noreferrer">Profil LinkedIn</a></li>
+              <li><a href="https://github.com/MatisDembele" target="_blank" rel="noreferrer">GitHub — code public</a></li>
+            </ul>
+          </article>
+          <article class="docs-box reveal">
+            <h3 class="docs-box__title mono">Réalisations E5 — BTS SIO</h3>
+            <ul class="docs-box__list">
+              <li><a href="assets/docs/fiche-e5-gsb.pdf" target="_blank" rel="noreferrer">Fiche E5 — GSB, gestion des frais (PDF)</a></li>
+              <li><a href="assets/docs/fiche-e5-mdl.pdf" target="_blank" rel="noreferrer">Fiche E5 — Maison des Ligues, FFE (PDF)</a></li>
+            </ul>
+          </article>
+          <article class="docs-box reveal">
+            <h3 class="docs-box__title mono">En ligne</h3>
+            <ul class="docs-box__list">
+              <li><a href="https://www.fightdata.app/" target="_blank" rel="noreferrer">fightdata.app — application en production</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FICHE 07 — Contact ============ -->
+    <section class="section section--contact" id="contact">
+      <div class="container contact reveal">
+        <p class="fiche mono">Fiche 07 — Contact</p>
+        <h2 class="section__title">Pour un poste, un café, ou un test technique</h2>
+        <p class="section__lede">Réponse rapide par e-mail ou téléphone — et je me déplace sur le 83, le 13 et le 84.</p>
+        <div class="contact__actions">
+          <a class="btn btn--adv" href="mailto:matis@matisdembele.com">matis@matisdembele.com</a>
+          <a class="btn btn--ghost" href="tel:+33612765818">06 12 76 58 18</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/matis-dembele" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="mono">© <span id="year">2026</span> Matis Dembele — Conçu &amp; codé à Toulon</p>
+      <a class="mono" href="#accueil">Haut de page</a>
+    </div>
   </footer>
-</main>
 
-<script>
-// Reveal on scroll
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      revealObs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-// Active nav link based on section in view
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav.top a[href^="#"]');
-
-const sectionObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navLinks.forEach(link => {
-        link.style.color = link.getAttribute('href') === '#' + id ? 'var(--accent)' : '';
-      });
-    }
-  });
-}, { rootMargin: '-45% 0px -45% 0px' });
-
-sections.forEach(s => sectionObs.observe(s));
-</script>
-
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

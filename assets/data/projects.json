@@ -1,0 +1,102 @@
+{
+  "categories": [
+    { "id": "all", "label": "Tous" },
+    { "id": "defense", "label": "Défense" },
+    { "id": "production", "label": "En production" },
+    { "id": "bts", "label": "BTS" },
+    { "id": "perso", "label": "Perso" }
+  ],
+  "projects": [
+    {
+      "id": "fight-data-arena",
+      "featured": true,
+      "date": "2026-01",
+      "status": "En production",
+      "categories": ["perso", "production"],
+      "context": "Projet personnel · Solo",
+      "title": "Fight Data Arena — frame data SF6 gamifié",
+      "description": "Application web full-stack qui transforme les frame data de Street Fighter 6 — habituellement des tableaux bruts — en quiz interactifs pour les mémoriser. Déployée en production sur fightdata.app.",
+      "highlights": [
+        "API REST FastAPI + PostgreSQL (1 418 entrées), modèles Fighter / Move via SQLAlchemy",
+        "Scraper Python autonome (BeautifulSoup) pour alimenter la base depuis ultimateframedata.com",
+        "Punish Calculator : logique métier qui détermine si un coup est punissable selon son frame advantage au blocage",
+        "Déploiement continu : front Next.js sur Vercel, back FastAPI sur Render, redéploiement à chaque push"
+      ],
+      "tags": ["Next.js", "TypeScript", "FastAPI", "Python", "PostgreSQL", "SQLAlchemy"],
+      "split": { "front": 40, "back": 40, "data": 20 },
+      "links": { "demo": "https://www.fightdata.app/", "repo": "https://github.com/MatisDembele" }
+    },
+    {
+      "id": "e-docaero",
+      "featured": false,
+      "date": "2024-03",
+      "status": "Stage · 6 sem.",
+      "categories": ["defense"],
+      "context": "Stage · DIRISI Toulon",
+      "title": "e-DOCAERO — réécriture full-stack",
+      "description": "Réécriture en application web full-stack (stack PERN) d'un outil de gestion de documentation aéronautique militaire (DIRCAM/DIA) remplaçant un outil Access 97 obsolète, au sein d'une équipe en méthode agile.",
+      "highlights": [
+        "Front React : affichage conditionnel par rôle, tri et filtrage des commandes, i18n FR/EN, exports Excel",
+        "Back Node.js / Express : endpoints API REST, requêtes Sequelize avec jointures sur PostgreSQL, seeder xlsx",
+        "Environnement conteneurisé Docker, authentification Keycloak, gestion par tickets et sprints"
+      ],
+      "tags": ["React", "Node.js", "Express", "PostgreSQL", "Sequelize", "Docker", "Keycloak"],
+      "split": { "front": 50, "back": 35, "data": 15 },
+      "links": {}
+    },
+    {
+      "id": "mdl-ffe",
+      "featured": false,
+      "date": "2024-04",
+      "status": "BTS · Équipe",
+      "categories": ["bts"],
+      "context": "Projet BTS · Lycée Bonaparte",
+      "title": "Maison des Ligues — FFE 2024",
+      "description": "Application web d'inscription au congrès pour les licenciés de la Fédération Française d'Escrime, développée en équipe (Symfony) et mise en production sur serveur réel.",
+      "highlights": [
+        "API (API Platform) connectée à la base Oracle de la FFE, création de compte par numéro de licencié",
+        "Connexion, réinitialisation de mot de passe, mail de confirmation automatique à l'inscription",
+        "Gestion des thèmes, ateliers et vacations côté salariés MDL, tests unitaires phpUnit"
+      ],
+      "tags": ["PHP", "Symfony", "Twig", "API Platform", "Oracle", "phpUnit"],
+      "split": { "front": 30, "back": 50, "data": 20 },
+      "links": { "fiche": "assets/docs/fiche-e5-mdl.pdf" }
+    },
+    {
+      "id": "gsb",
+      "featured": false,
+      "date": "2024-01",
+      "status": "BTS · Solo",
+      "categories": ["bts"],
+      "context": "Projet BTS · Lycée Bonaparte",
+      "title": "Galaxy Swiss Bourdin — notes de frais",
+      "description": "Application web de gestion des frais de déplacement, restauration et hébergement pour les visiteurs médicaux d'un laboratoire pharmaceutique.",
+      "highlights": [
+        "Deux niveaux de rôles — visiteur médical et comptable — avec workflows distincts",
+        "Validation des fiches de frais, mise en paiement, gestion fine de l'indemnisation kilométrique",
+        "Génération PDF (fpdf) optimisée — un seul fichier produit par mois — et sécurisation des mots de passe stockés"
+      ],
+      "tags": ["PHP", "MySQL", "Bootstrap", "fpdf", "JavaScript"],
+      "split": { "front": 25, "back": 55, "data": 20 },
+      "links": { "fiche": "assets/docs/fiche-e5-gsb.pdf" }
+    },
+    {
+      "id": "patritec",
+      "featured": false,
+      "date": "2023-06",
+      "status": "Stage · 8 sem.",
+      "categories": ["defense"],
+      "context": "Stage · DIRISI Toulon",
+      "title": "PATRITEC — gestion interne",
+      "description": "Application web de gestion interne, développée en équipe au sein de la DIRISI selon une méthode agile (daily scrum, sprints).",
+      "highlights": [
+        "Features Angular : gestion des rôles et permissions, page d'administration avec création de comptes",
+        "Conception d'une classe réutilisable d'export XLS",
+        "Génération de PDF dynamiques (jsPDF) depuis des données via observables RxJS"
+      ],
+      "tags": ["Angular", "TypeScript", "RxJS", "jsPDF", "Agile"],
+      "split": { "front": 60, "back": 25, "data": 15 },
+      "links": {}
+    }
+  ]
+}
