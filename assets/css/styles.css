@@ -281,20 +281,6 @@ a { color: inherit; }
 
 .site-header__tools { display: flex; align-items: center; gap: 1rem; }
 
-.header-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: var(--adv);
-  font-size: 0.62rem;
-}
-.header-status__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--adv);
-}
-
 .nav-burger {
   display: none;
   flex-direction: column;
@@ -523,118 +509,7 @@ a { color: inherit; }
   box-shadow: var(--shadow-card);
 }
 
-/* ---------- Fiche 02 — En production ---------- */
-.prod-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
-  gap: clamp(2rem, 5vw, 3.6rem);
-  align-items: center;
-  padding: clamp(1.9rem, 4vw, 3rem);
-  background: var(--ink-bg-2);
-  border: 1px solid var(--line-light);
-  border-top: 2px solid var(--adv);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card-dark);
-}
-.prod-card__kind { color: var(--adv); margin-bottom: 0.9rem; }
-.prod-card__title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
-  line-height: 1.2;
-  margin-bottom: 0.9rem;
-}
-.prod-card__desc { color: var(--cream-soft); }
-.prod-card__points {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.prod-card__points li {
-  position: relative;
-  padding-left: 1.3rem;
-  font-size: 0.95rem;
-  color: var(--cream-soft);
-}
-.prod-card__points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.6em;
-  width: 12px;
-  height: 1px;
-  background: var(--adv);
-}
-.prod-card__points strong { color: var(--cream); font-weight: 600; }
-.prod-card__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.7rem; }
-
-/* Frame data — élément signature */
-.framedata {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  padding: 1.4rem 1.5rem 1.3rem;
-  background: var(--ink-bg);
-  border: 1px solid var(--line-light);
-  border-radius: var(--radius);
-}
-.framedata__label { color: var(--cream-soft); font-size: 0.6rem; }
-.framedata__row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-.framedata__seg { color: var(--cream-soft); font-size: 0.58rem; }
-.framedata__cells {
-  display: flex;
-  gap: 3px;
-}
-.framedata__cells i {
-  flex: 1 1 0;
-  max-width: 16px;
-  height: 14px;
-  background: var(--frame-grey);
-  opacity: 0.55;
-  border-radius: 2px;
-}
-.framedata__cells .is-startup { background: var(--adv); opacity: 1; }
-.framedata__cells .is-active { background: var(--punish); opacity: 1; }
-.framedata__verdict {
-  margin-top: 0.3rem;
-  color: var(--cream-soft);
-  font-size: 0.62rem;
-}
-.framedata__verdict span { color: var(--punish); }
-
-.prod-stats {
-  list-style: none;
-  margin: 1.6rem 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid var(--line-light);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.prod-stats li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 1.2rem 1.4rem;
-}
-.prod-stats li + li { border-left: 1px solid var(--line-light); }
-.prod-stats__num {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.7rem;
-  color: var(--cream);
-}
-.prod-stats__label { color: var(--cream-soft); font-size: 0.6rem; }
-
-/* ---------- Fiche 03 — Projets ---------- */
+/* ---------- Fiche 02 — Projets ---------- */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -707,6 +582,56 @@ a { color: inherit; }
   margin-bottom: 0.6rem;
 }
 .proj__desc { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* --- Captures d'écran --- */
+.proj__shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.6rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+}
+.proj__shot {
+  display: block;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.proj__shot:hover,
+.proj__shot:focus-visible {
+  border-color: var(--adv);
+  transform: translateY(-2px);
+}
+.proj__shot img {
+  display: block;
+  width: 100%;
+  height: 108px;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--paper-deep);
+}
+.proj__shot-cap {
+  display: block;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.58rem;
+  line-height: 1.3;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+}
+
+/* Mention en place des captures (projets non diffusables) */
+.proj__note {
+  margin-top: 1.1rem;
+  padding: 0.55rem 0.7rem;
+  border-left: 2px solid var(--frame-grey);
+  background: var(--paper-deep);
+  color: var(--ink-soft);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+}
+
 .proj__points {
   list-style: none;
   padding: 0;
@@ -800,7 +725,7 @@ a { color: inherit; }
 .projects-empty,
 .projects-error { color: var(--ink-soft); padding-block: 1.4rem; }
 
-/* ---------- Fiche 04 — Stack ---------- */
+/* ---------- Fiche 03 — Stack ---------- */
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -841,7 +766,7 @@ a { color: inherit; }
   background: var(--adv-deep);
 }
 
-/* ---------- Fiche 05 — Formation ---------- */
+/* ---------- Fiche 04 — Formation ---------- */
 .edu {
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(220px, 1fr);
@@ -871,7 +796,7 @@ a { color: inherit; }
 .edu__side dt { color: var(--ink-soft); font-size: 0.62rem; margin-bottom: 0.25rem; }
 .edu__side dd { font-size: 0.95rem; font-weight: 500; }
 
-/* ---------- Fiche 06 — Documents ---------- */
+/* ---------- Fiche 05 — Documents ---------- */
 .docs-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -907,8 +832,14 @@ a { color: inherit; }
   font-size: 0.8em;
 }
 .docs-box__list a:hover { color: var(--adv); padding-left: 0.4rem; }
+.docs-box__note {
+  margin-top: 1rem;
+  color: var(--cream-soft);
+  font-size: 0.62rem;
+  line-height: 1.5;
+}
 
-/* ---------- Fiche 07 — Contact ---------- */
+/* ---------- Fiche 06 — Contact ---------- */
 .section--contact { text-align: center; }
 .contact .fiche { justify-content: center; }
 .contact .section__lede { margin-inline: auto; max-width: 50ch; }
@@ -958,7 +889,6 @@ a { color: inherit; }
   .cartouche__field:nth-child(odd) { border-left: none; }
   .cartouche__field:nth-child(n + 3) { border-top: 1px solid var(--line); }
 
-  .prod-card { grid-template-columns: 1fr; }
   .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .docs-grid { grid-template-columns: 1fr; }
   .edu { grid-template-columns: 1fr; }
@@ -994,12 +924,9 @@ a { color: inherit; }
   .site-nav__list { flex-direction: column; gap: 1.25rem; }
   .site-nav__list a { font-size: 1.02rem; }
   .nav-burger { display: flex; z-index: 5; }
-  .header-status { display: none; }
 
   .projects-grid { grid-template-columns: 1fr; }
   .stack-grid { grid-template-columns: 1fr; }
-  .prod-stats { grid-template-columns: 1fr; }
-  .prod-stats li + li { border-left: none; border-top: 1px solid var(--line-light); }
 
   .ledger__entry--top .ledger__body { padding: 1.3rem 1.2rem; }
 }

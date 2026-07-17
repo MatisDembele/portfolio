@@ -213,6 +213,27 @@
       return wrap;
     }
 
+    function buildShots(shots) {
+      if (!shots || !shots.length) return null;
+      var wrap = el("figure", "proj__shots");
+      for (var i = 0; i < shots.length; i++) {
+        var shot = shots[i];
+        var a = el("a", "proj__shot");
+        a.href = shot.src;
+        a.target = "_blank";
+        a.rel = "noreferrer";
+        var img = el("img");
+        img.src = shot.src;
+        img.alt = shot.alt || "";
+        img.loading = "lazy";
+        img.decoding = "async";
+        a.appendChild(img);
+        if (shot.caption) a.appendChild(el("span", "proj__shot-cap mono", shot.caption));
+        wrap.appendChild(a);
+      }
+      return wrap;
+    }
+
     function buildCard(project) {
       var card = el("article", "proj" + (project.featured ? " proj--featured" : ""));
 
@@ -224,6 +245,10 @@
 
       card.appendChild(el("h3", "proj__title", project.title || ""));
       card.appendChild(el("p", "proj__desc", project.description || ""));
+
+      var shots = buildShots(project.shots);
+      if (shots) card.appendChild(shots);
+      else if (project.note) card.appendChild(el("p", "proj__note mono", project.note));
 
       if (project.highlights && project.highlights.length) {
         var points = el("ul", "proj__points");

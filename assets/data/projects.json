@@ -2,29 +2,28 @@
   "categories": [
     { "id": "all", "label": "Tous" },
     { "id": "defense", "label": "Défense" },
-    { "id": "production", "label": "En production" },
     { "id": "bts", "label": "BTS" },
     { "id": "perso", "label": "Perso" }
   ],
   "projects": [
     {
       "id": "fight-data-arena",
-      "featured": true,
+      "featured": false,
       "date": "2026-01",
-      "status": "En production",
-      "categories": ["perso", "production"],
-      "context": "Projet personnel · Solo",
+      "status": "Perso · En ligne",
+      "categories": ["perso"],
+      "context": "Projet personnel · Développé avec l'IA",
       "title": "Fight Data Arena — frame data SF6 gamifié",
-      "description": "Application web full-stack qui transforme les frame data de Street Fighter 6 — habituellement des tableaux bruts — en quiz interactifs pour les mémoriser. Déployée en production sur fightdata.app.",
+      "description": "Application web qui transforme les frame data de Street Fighter 6 — habituellement des tableaux bruts — en quiz interactifs. Projet personnel conçu et piloté par mes soins, développé avec l'assistance d'une IA, mis en ligne sur fightdata.app.",
       "highlights": [
-        "API REST FastAPI + PostgreSQL (1 418 entrées), modèles Fighter / Move via SQLAlchemy",
-        "Scraper Python autonome (BeautifulSoup) pour alimenter la base depuis ultimateframedata.com",
-        "Punish Calculator : logique métier qui détermine si un coup est punissable selon son frame advantage au blocage",
-        "Déploiement continu : front Next.js sur Vercel, back FastAPI sur Render, redéploiement à chaque push"
+        "Conception du produit et choix d'architecture : API FastAPI, base PostgreSQL, front Next.js",
+        "Punish Calculator : règle métier déterminant si un coup est punissable selon son frame advantage au blocage",
+        "Mise en ligne et maintien en conditions opérationnelles : front sur Vercel, back sur Render, redéploiement à chaque push"
       ],
-      "tags": ["Next.js", "TypeScript", "FastAPI", "Python", "PostgreSQL", "SQLAlchemy"],
+      "tags": ["Next.js", "TypeScript", "FastAPI", "Python", "PostgreSQL", "Vercel"],
       "split": { "front": 40, "back": 40, "data": 20 },
-      "links": { "demo": "https://www.fightdata.app/", "repo": "https://github.com/MatisDembele" }
+      "note": "Développé avec l'assistance d'une IA — conception, architecture et mise en production assurées par mes soins",
+      "links": { "demo": "https://www.fightdata.app/" }
     },
     {
       "id": "e-docaero",
@@ -34,51 +33,86 @@
       "categories": ["defense"],
       "context": "Stage · DIRISI Toulon",
       "title": "e-DOCAERO — réécriture full-stack",
-      "description": "Réécriture en application web full-stack (stack PERN) d'un outil de gestion de documentation aéronautique militaire (DIRCAM/DIA) remplaçant un outil Access 97 obsolète, au sein d'une équipe en méthode agile.",
+      "description": "Réécriture en stack PERN de l'outil de gestion de la documentation aéronautique de la DIRCAM/DIA, en remplacement d'un Access 97 obsolète. L'outil conditionne les missions aériennes de l'Armée de l'Air, de la Marine, de la Gendarmerie et de la Sécurité civile.",
       "highlights": [
-        "Front React : affichage conditionnel par rôle, tri et filtrage des commandes, i18n FR/EN, exports Excel",
-        "Back Node.js / Express : endpoints API REST, requêtes Sequelize avec jointures sur PostgreSQL, seeder xlsx",
-        "Environnement conteneurisé Docker, authentification Keycloak, gestion par tickets et sprints"
+        "Front React : catalogue produits, tri et filtrage des commandes par rôle, affichage conditionnel selon les habilitations Keycloak, internationalisation FR/EN",
+        "Back Node.js / Express : création d'endpoints REST, requêtes Sequelize avec jointures sur PostgreSQL, seeder alimentant une table depuis un fichier xlsx",
+        "Exports Excel côté client et serveur ; correction d'un bug de setter non protégé contre l'état null, en environnement conteneurisé sans débogueur"
       ],
       "tags": ["React", "Node.js", "Express", "PostgreSQL", "Sequelize", "Docker", "Keycloak"],
-      "split": { "front": 50, "back": 35, "data": 15 },
+      "split": { "front": 55, "back": 30, "data": 15 },
+      "note": "Projet interne Défense — captures non diffusables",
       "links": {}
     },
     {
       "id": "mdl-ffe",
       "featured": false,
       "date": "2024-04",
-      "status": "BTS · Équipe",
+      "status": "BTS · Binôme",
       "categories": ["bts"],
       "context": "Projet BTS · Lycée Bonaparte",
       "title": "Maison des Ligues — FFE 2024",
-      "description": "Application web d'inscription au congrès pour les licenciés de la Fédération Française d'Escrime, développée en équipe (Symfony) et mise en production sur serveur réel.",
+      "description": "Application web d'inscription au congrès pour les licenciés de la Fédération Française d'Escrime, développée en binôme sous Symfony. J'ai initialisé le projet API et pris en charge le parcours d'inscription de bout en bout.",
       "highlights": [
-        "API (API Platform) connectée à la base Oracle de la FFE, création de compte par numéro de licencié",
-        "Connexion, réinitialisation de mot de passe, mail de confirmation automatique à l'inscription",
-        "Gestion des thèmes, ateliers et vacations côté salariés MDL, tests unitaires phpUnit"
+        "Initialisation de l'API Symfony : configuration Doctrine et API Platform, entités Club et Licencie exposées en REST sur la base Oracle de la FFE",
+        "Parcours d'inscription complet : formulaire (ateliers, nuitées, restauration), contrôleur, page de confirmation avec calcul du montant total",
+        "Mail de confirmation automatique — template Twig, route dédiée et envoi via le composant Mailer"
       ],
-      "tags": ["PHP", "Symfony", "Twig", "API Platform", "Oracle", "phpUnit"],
+      "tags": ["PHP", "Symfony", "Twig", "API Platform", "Doctrine", "Oracle"],
       "split": { "front": 30, "back": 50, "data": 20 },
-      "links": { "fiche": "assets/docs/fiche-e5-mdl.pdf" }
+      "shots": [
+        {
+          "src": "assets/img/projets/mdl-inscription.png",
+          "alt": "Formulaire d'inscription au congrès : ateliers, nuitées et restauration",
+          "caption": "Formulaire d'inscription"
+        },
+        {
+          "src": "assets/img/projets/mdl-confirmation.png",
+          "alt": "Page de confirmation détaillant les nuitées, les repas et le total estimé",
+          "caption": "Confirmation + total calculé"
+        },
+        {
+          "src": "assets/img/projets/mdl-email.png",
+          "alt": "Mail de confirmation d'inscription reçu par le licencié",
+          "caption": "Mail de confirmation"
+        }
+      ],
+      "links": {}
     },
     {
       "id": "gsb",
       "featured": false,
       "date": "2024-01",
-      "status": "BTS · Solo",
+      "status": "BTS · Binôme",
       "categories": ["bts"],
       "context": "Projet BTS · Lycée Bonaparte",
       "title": "Galaxy Swiss Bourdin — notes de frais",
-      "description": "Application web de gestion des frais de déplacement, restauration et hébergement pour les visiteurs médicaux d'un laboratoire pharmaceutique.",
+      "description": "Application web de gestion des frais des visiteurs médicaux d'un laboratoire pharmaceutique. Développée en binôme sur une base PHP fournie : j'ai pris en charge la mise en paiement des fiches et l'export PDF.",
       "highlights": [
-        "Deux niveaux de rôles — visiteur médical et comptable — avec workflows distincts",
-        "Validation des fiches de frais, mise en paiement, gestion fine de l'indemnisation kilométrique",
-        "Génération PDF (fpdf) optimisée — un seul fichier produit par mois — et sécurisation des mots de passe stockés"
+        "Mise en paiement côté comptable, du modèle à la vue : tableau des fiches validées, tri par colonne, recherche par visiteur, sélection multiple et modale de confirmation récapitulative",
+        "Export PDF de la fiche de frais (fpdf) : tableaux forfait et hors forfait, calcul du total, reprise et résolution d'un blocage de génération, correctif d'encodage des accents",
+        "Refactoring : extraction du JavaScript des vues vers des fichiers dédiés"
       ],
       "tags": ["PHP", "MySQL", "Bootstrap", "fpdf", "JavaScript"],
-      "split": { "front": 25, "back": 55, "data": 20 },
-      "links": { "fiche": "assets/docs/fiche-e5-gsb.pdf" }
+      "split": { "front": 40, "back": 45, "data": 15 },
+      "shots": [
+        {
+          "src": "assets/img/projets/gsb-mise-en-paiement.png",
+          "alt": "Tableau des fiches de frais validées côté comptable",
+          "caption": "Suivi des fiches validées"
+        },
+        {
+          "src": "assets/img/projets/gsb-modale-confirmation.png",
+          "alt": "Modale récapitulant les fiches sélectionnées avant mise en paiement",
+          "caption": "Confirmation avant paiement"
+        },
+        {
+          "src": "assets/img/projets/gsb-recherche.png",
+          "alt": "Filtrage du tableau par nom de visiteur",
+          "caption": "Recherche par visiteur"
+        }
+      ],
+      "links": {}
     },
     {
       "id": "patritec",
@@ -88,14 +122,15 @@
       "categories": ["defense"],
       "context": "Stage · DIRISI Toulon",
       "title": "PATRITEC — gestion interne",
-      "description": "Application web de gestion interne, développée en équipe au sein de la DIRISI selon une méthode agile (daily scrum, sprints).",
+      "description": "Application web de gestion interne développée en équipe au sein de la DIRISI selon une méthode agile (daily scrum, sprints, réunions client). Premier stage : formation à Angular puis contribution au projet, en environnement Docker sous contraintes SSI.",
       "highlights": [
-        "Features Angular : gestion des rôles et permissions, page d'administration avec création de comptes",
-        "Conception d'une classe réutilisable d'export XLS",
-        "Génération de PDF dynamiques (jsPDF) depuis des données via observables RxJS"
+        "Features Angular : permissions liées au rôle courant, page d'administration avec création de comptes et infobulle actualisée dynamiquement via observables RxJS",
+        "Classe réutilisable d'export XLS, généralisée à la demande du client — deux formats de données gérés, en-têtes et pieds de page configurables",
+        "Audit comparatif des bibliothèques PDF (vulnérabilités, poids, maintenance) après avoir identifié que la solution retenue était obsolète, puis migration vers jsPDF"
       ],
-      "tags": ["Angular", "TypeScript", "RxJS", "jsPDF", "Agile"],
-      "split": { "front": 60, "back": 25, "data": 15 },
+      "tags": ["Angular", "TypeScript", "RxJS", "jsPDF", "Docker", "Agile"],
+      "split": { "front": 75, "back": 10, "data": 15 },
+      "note": "Projet interne Défense — captures non diffusables",
       "links": {}
     }
   ]
