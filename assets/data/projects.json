@@ -13,16 +13,16 @@
       "status": "Perso · En ligne",
       "categories": ["perso"],
       "context": "Projet personnel · Développé avec l'IA",
-      "title": "Fight Data Arena — frame data SF6 gamifié",
-      "description": "Application web qui transforme les frame data de Street Fighter 6 — habituellement des tableaux bruts — en quiz interactifs. Projet personnel conçu et piloté par mes soins, développé avec l'assistance d'une IA, mis en ligne sur fightdata.app.",
+      "title": "Fight Data Arena — la frame data SF6 transformée en jeu",
+      "description": "Les frame data de Street Fighter 6 vivent d'habitude dans des tableaux illisibles. J'en ai fait une application web complète qui les transforme en quiz interactifs, portée seul de l'idée jusqu'à la production sur fightdata.app.",
       "highlights": [
-        "Conception du produit et choix d'architecture : API FastAPI, base PostgreSQL, front Next.js",
-        "Punish Calculator : règle métier déterminant si un coup est punissable selon son frame advantage au blocage",
-        "Mise en ligne et maintien en conditions opérationnelles : front sur Vercel, back sur Render, redéploiement à chaque push"
+        "8 modes de jeu, du quiz classique au Survival, plus un multijoueur 1v1 en temps réel",
+        "Connexion Discord, profil et système de rang, avec classements quotidien et hebdomadaire — une vraie boucle de progression",
+        "Roster SF6 complet — 30 personnages, 1562 coups — tenu à jour au fil des patchs, front sur Vercel et back sur Render en déploiement continu"
       ],
       "tags": ["Next.js", "TypeScript", "FastAPI", "Python", "PostgreSQL", "Vercel"],
       "split": { "front": 40, "back": 40, "data": 20 },
-      "note": "Développé avec l'assistance d'une IA — conception, architecture et mise en production assurées par mes soins",
+      "note": "Idée, game design et direction produit assurés par mes soins — développement réalisé avec l'assistance d'une IA sous mes spécifications",
       "links": { "demo": "https://www.fightdata.app/" }
     },
     {
